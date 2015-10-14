@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="mx.gob.tsjdf.properties.application" var="msg" />
+
+<h:head>
+	<title><h:outputText value="#{msg.welcomeTitle}" /></title>
+	<style type="text/css">
+<!--
+.ui-widget,.ui-widget .ui-widget {
+	   font-size: small;
+	}
+-->
+</style>
+</h:head>
+
+<body class="frmLogin">
+	<div id="header" align="center" style="margin-top:60px">
+		<h1><h:outputText value="#{msg.welcomeMessage}"/></h1>
+	</div>
+
+	<div id="body" align="center">
+	<h:form>
+		<p:panelGrid id="pgLogin" style="margin-top:80px">
+			<f:facet name="header">
+				<p:row>
+					<h2><p:column colspan="7">Inicion de Sesión</p:column></h2>
+				</p:row>
+			</f:facet>
+
+			<p:row>
+				<p:column colspan="2" rowspan="7">
+					<p:graphicImage value="/resources/images/logo_.jpg"></p:graphicImage>
+				</p:column>
+				<p:column colspan="6" style="height: 30px;">
+				</p:column>
+			</p:row>
+
+			<p:row>
+				<p:column colspan="3">
+					<p:outputLabel for="txtNoEmpleado" style="text-align: right;">Número de empleado:</p:outputLabel>
+				</p:column>
+				<p:column colspan="3">
+					<p:inputText id="txtNoEmpleado" label="NumeroEmpleado" required="true"></p:inputText>
+				</p:column>
+			</p:row>
+
+			<p:row>
+				<p:column colspan="3">
+					<p:outputLabel for="txtPassword" style="text-align: right;">Contraseña:</p:outputLabel>
+				</p:column>
+				<p:column colspan="3">
+					<p:password id="txtPassword" label="Password" required="true"></p:password>
+				</p:column>
+			</p:row>
+
+			<p:row>
+				<p:column colspan="3">
+				</p:column>
+				<p:column colspan="3">
+					<p:button id="btnAcceso" value="Acceso"></p:button>
+				</p:column>
+			</p:row>
+
+			<p:row>
+				<p:column colspan="8" rowspan="2"></p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+	</div>
+	<!--
+	<footer id="footer">
+	<div id="footer" align="center">
+		<p class="LabelFooter">
+			<p:outputLabel value="#{msg.footerMessage}" />
+		</p>
+	</div>
+	</footer>
+	 -->
+</body>
+</html>
