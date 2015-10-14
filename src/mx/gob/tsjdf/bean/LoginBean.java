@@ -1,7 +1,14 @@
 package mx.gob.tsjdf.bean;
 
-public class LoginBean {
-	String username, password;
+import java.io.Serializable;
+
+public class LoginBean implements Serializable{
+	
+	
+	private static final long serialVersionUID = 1L;
+	
+	String username;
+	String password;
 
 	public String getUsername() {
 		return username;
