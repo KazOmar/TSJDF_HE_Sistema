@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<h:head>
+
+
+<style type="text/css">
+.ui-widget,.ui-widget .ui-widget {
+	font-size: 95%;
+}
+.ui-menu.ui-widget {
+	border: none;
+	width: 100%;
+}
+</style> 
+<script type="text/javascript">
+
+</script>	 
+   
+</h:head>
+<h:body>
+
+
+
+<div id="contenedor" style="height: 85px;border: 0px solid black;">
+	
+
+<div style="position:static; float:left;width: 8%;border: 0px solid blue;">
+<img id="tsjdfpng" src="../resources/images/trjdf_80.png"  />
+</div>
+<div style="position:relative;text-align:center; top:15px; left:20px;width: 620px;border: 0px solid blue">
+<span id="titleLogin" style="font-size: 24px;" class="text-success"><strong>PODER JUDICIAL DEL DISTRITO FEDERAL</strong></span>
+</div>
+<div style="position:relative;top:-70px;left:850px;width: inherit;">
+	
+</div>
+</div>
+
+<p:layout style="" widgetVar="layoutWdgt" >
+    <p:layoutUnit id="menu" 
+    			  position="west" 
+    			  size="240" 
+    			  header="MENU" 
+    			  resizable="true" 
+    			  closable="false" 
+    			  collapsible="true" 
+    			  collapsed=""
+    			  style="height:100px;">
+  
+    <h:form>    
+    <p:growl id="messages" showDetail="false"/>
+    <p:menu toggleable="true">
+        <p:submenu label="Horas Extras">
+            <p:menuitem value="Capturar Solicitudes" update=":frameContent" actionListener="#{menuView.onNodeSelect('/TSJDF_HE_Sistema/admin/catalogoUsuarios.xhtml')}" icon="ui-icon-pencil" />
+            <p:menuitem value="Aprobar solicitudes"  actionListener="#" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+        </p:submenu>
+        <p:submenu label="Administración">
+            <p:menuitem value="Roles" actionListener="#" update=":frameContent"  icon="ui-icon-close"/>
+        </p:submenu>
+    </p:menu>
+    </h:form>
+    </p:layoutUnit>
+ 
+    <p:layoutUnit id="layCenter" position="center" style="min-height:580px;">
+       <h:form id="frameContent" style="height:100%;" class="restricted"> 
+         
+        <iframe id="contenPrincipal" 
+                src="#{menuView.pageLink}"
+                width="100%"  
+                height="100%"
+                frameborder="0" />  
+        
+        </h:form>
+    </p:layoutUnit>
+</p:layout>
+</h:body>
+</html>
